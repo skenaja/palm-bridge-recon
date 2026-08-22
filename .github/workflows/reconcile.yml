@@ -1,0 +1,55 @@
+name: reconcile
+
+on:
+  schedule:
+    - cron: '17 6 * * *'      # daily at 06:17 UTC
+  workflow_dispatch: {}        # allow manual "Run workflow"
+
+permissions:
+  contents: write              # push the data commit back to the repo
+
+concurrency:
+  group: reconcile             # never let two runs race on git push
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Rebuild working DB from committed JSONL
+        run: |
+          node bridge-db.js import palm
+          node bridge-db.js import ethereum
+
+      - name: Fetch new events
+        env:
+          INFURA_KEY: ${{ secrets.INFURA_KEY }}
+        run: |
+          node bridge-db.js fetch palm
+          node bridge-db.js fetch ethereum
+
+      - name: Export JSONL + reconcile JSON
+        run: |
+          node bridge-db.js export
+          node bridge-db.js reconcile --json
+
+      - name: Commit data changes (if any)
+        run: |
+          git config user.name  "bridge-recon-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data web/public/data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "chore(data): reconcile $(date -u +%F)"
+            git push
+          fi

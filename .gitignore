@@ -1,0 +1,20 @@
+# ephemeral working state — rebuilt from committed JSONL on every run
+bridge.db
+bridge.db-wal
+bridge.db-shm
+*.wal
+*.shm
+
+# deps / build
+node_modules/
+web/dist/
+web/node_modules/
+
+# local secrets
+.env
+.env.*
+!.env.example
+
+# misc
+*.bkp
+.DS_Store

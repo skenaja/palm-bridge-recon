@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-20T08:06:21.827Z",
+  "totalUnexecuted": 0,
+  "directions": {
+    "palm>ethereum": {
+      "label": "Palm → Ethereum",
+      "unexecuted": 0,
+      "whitelisted": 0,
+      "byStatus": {},
+      "items": []
+    },
+    "ethereum>palm": {
+      "label": "Ethereum → Palm",
+      "unexecuted": 0,
+      "whitelisted": 1,
+      "byStatus": {},
+      "items": []
+    }
+  }
+}
