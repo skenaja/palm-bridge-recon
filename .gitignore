@@ -18,3 +18,4 @@ web/node_modules/
 # misc
 *.bkp
 .DS_Store
+.gstack/
