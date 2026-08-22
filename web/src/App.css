@@ -116,6 +116,87 @@ h1 {
 }
 .card.error { color: var(--bad); }
 
+/* Lifetime in/out summary */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr; }
+}
+.stat { margin-bottom: 0; }
+.stat-label { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.stat-value {
+  font-size: 28px;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+  margin: 4px 0 2px;
+  font-variant-numeric: tabular-nums;
+}
+.stat-sub { font-size: 12.5px; }
+
+/* Prominent unreconciled alert banner */
+.alert {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-left: 5px solid var(--warn);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+}
+.alert-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--warn);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.alert-icon { font-size: 18px; line-height: 1; }
+.alert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+/* Highlighted direction + block chips (the two things to notice) */
+.hl-dir,
+.hl-block {
+  font-weight: 700;
+  color: var(--warn);
+  background: var(--card);
+  border: 1px solid var(--warn-border);
+  padding: 2px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.hl-block { font-family: var(--mono); font-size: 12.5px; }
+
+/* Section card flagged when it holds unreconciled items */
+.card-flagged { border-left: 5px solid var(--warn); }
+
+/* Highlighted deposit-block value in the stuck table */
+.block-hl {
+  display: inline-block;
+  background: var(--warn-bg);
+  color: var(--warn);
+  border: 1px solid var(--warn-border);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
 .section-head {
   display: flex;
   align-items: center;
@@ -154,9 +235,22 @@ th {
 td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
 tr:last-child td { border-bottom: none; }
 .num { text-align: right; }
+.nowrap { white-space: nowrap; }
 .mono { font-family: var(--mono); font-size: 12.5px; }
 a { color: var(--progress); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* Token symbol label in tables */
+.tok {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--cancelled-bg);
+  white-space: nowrap;
+}
 
 .badge {
   display: inline-block;
@@ -167,6 +261,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid transparent;
   white-space: nowrap;
 }
+.badge-ok { color: var(--ok); background: var(--ok-bg); border-color: var(--ok-border); }
 .badge-bad { color: var(--bad); background: var(--bad-bg); border-color: var(--bad-border); }
 .badge-progress { color: var(--progress); background: var(--progress-bg); border-color: var(--progress-border); }
 .badge-cancelled { color: var(--muted); background: var(--cancelled-bg); border-color: var(--cancelled-border); }

@@ -61,6 +61,11 @@ const ETHEREUM_CHAIN_ID = 1;
 
 const BATCH_SIZE = 1000;
 
+// Dashboard "recent transfers" list: how many to show, and how many candidates to
+// pull per direction before merging by timestamp (must be >= RECENT_LIMIT).
+const RECENT_LIMIT      = 20;
+const RECENT_CANDIDATES = 20;
+
 const BRIDGE_ABI = [
   'event Deposit(uint8 indexed destinationChainID, bytes32 indexed resourceID, uint64 indexed depositNonce)',
   'event ProposalEvent(uint8 indexed originChainID, uint64 indexed depositNonce, uint8 indexed status, bytes32 resourceID, bytes32 dataHash)',
@@ -96,6 +101,17 @@ function ensureDataDir() {
 function ensureWebDataDir() {
   fs.mkdirSync(WEB_DATA_DIR, { recursive: true });
 }
+
+// resourceID → token metadata (symbol/name/type). Committed lookup, best-effort:
+// an unknown resourceID just resolves to null and the UI falls back to the raw id.
+const TOKENS_PATH = path.join(DATA_DIR, 'tokens.json');
+let TOKENS = {};
+try {
+  TOKENS = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf8'));
+} catch {
+  TOKENS = {};
+}
+const tokenFor = (resourceID) => TOKENS[resourceID] ?? null;
 
 function rpcFor(network) {
   const url = network === 'palm' ? PALM_RPC : ETHEREUM_RPC;
@@ -279,9 +295,43 @@ async function cmdFetch(network, overrideFromBlock) {
   db.close();
 }
 
+// ─── Block timestamp lookup (best-effort) ─────────────────────────────────────
+//
+// Palm and Ethereum block numbers aren't comparable across chains, so ordering the
+// merged "recent transfers" list by time needs real block timestamps. We only need
+// them for the handful of recent candidates, so this makes a small burst of getBlock
+// calls per chain. It never throws and skips any chain without an RPC URL — the list
+// degrades to block-order ordering if RPC is unavailable.
+// Returns a map of `${chain}:${block}` → unix seconds.
+
+async function fetchBlockTimes(items) {
+  const need = { palm: new Set(), ethereum: new Set() };
+  for (const it of items) {
+    if (need[it.chain]) need[it.chain].add(it.block);
+  }
+  const out = {};
+  for (const chain of ['palm', 'ethereum']) {
+    const url = chain === 'palm' ? PALM_RPC : ETHEREUM_RPC;
+    const blocks = [...need[chain]];
+    if (!url || blocks.length === 0) continue;
+    try {
+      const provider = new ethers.JsonRpcProvider(url);
+      const results = await Promise.allSettled(blocks.map(b => provider.getBlock(b)));
+      results.forEach((res, i) => {
+        if (res.status === 'fulfilled' && res.value?.timestamp != null) {
+          out[`${chain}:${blocks[i]}`] = res.value.timestamp;
+        }
+      });
+    } catch {
+      // best-effort: leave this chain's blocks without timestamps
+    }
+  }
+  return out;
+}
+
 // ─── Reconcile command ────────────────────────────────────────────────────────
 
-function cmdReconcile({ summary = false, json = false } = {}) {
+async function cmdReconcile({ summary = false, json = false } = {}) {
   const db = openDb();
 
   // Palm→Eth: Palm Deposit (dest=1) should have a matching Ethereum ProposalEvent (origin=2, status=3)
@@ -350,20 +400,106 @@ function cmdReconcile({ summary = false, json = false } = {}) {
   // ── JSON output for the dashboard ──
   if (json) {
     ensureWebDataDir();
+    const withToken = (resourceID) => {
+      const t = tokenFor(resourceID);
+      return { symbol: t?.symbol ?? null, name: t?.name ?? null };
+    };
     const toRows = rows => rows.map(r => ({
       nonce:      r.deposit_nonce,
       block:      r.deposit_block,
       tx:         r.deposit_tx,
       resourceID: r.resource_id,
+      ...withToken(r.resource_id),
       status:     statusLabel(r),
     }));
     const countByStatus = rows => {
       const g = groupByStatus(rows);
       return Object.fromEntries(Object.entries(g).map(([k, v]) => [k, v.length]));
     };
+
+    // ── Lifetime in/out totals per direction ──
+    // deposits = every Deposit into that direction; executed = deposits with a
+    // matching ProposalEvent status=3 on the destination chain.
+    const depositCount = (chain, dest) => db.prepare(
+      `SELECT COUNT(*) c FROM logs WHERE chain=? AND event_name='Deposit' AND destination_chain_id=?`,
+    ).get(chain, dest).c;
+    const executedCount = (depChain, dest, propChain, origin) => db.prepare(`
+      SELECT COUNT(*) c FROM (
+        SELECT d.deposit_nonce
+        FROM logs d
+        JOIN logs p
+          ON p.chain = ? AND p.event_name = 'ProposalEvent'
+         AND p.origin_chain_id = ? AND p.deposit_nonce = d.deposit_nonce AND p.status = '3'
+        WHERE d.chain = ? AND d.event_name = 'Deposit' AND d.destination_chain_id = ?
+        GROUP BY d.deposit_nonce
+      )
+    `).get(propChain, origin, depChain, dest).c;
+
+    const palmDeposits = depositCount('palm', '1');
+    const ethDeposits  = depositCount('ethereum', '2');
+    const palmExecuted = executedCount('palm', '1', 'ethereum', '2');
+    const ethExecuted  = executedCount('ethereum', '2', 'palm', '1');
+    // "unexecuted" excludes whitelisted transfers (known/expected non-executions),
+    // so the stat cards match the headline "N unreconciled" count. palmFiltered /
+    // ethFiltered are the stuck deposits with the whitelist already removed.
+    const totals = {
+      'palm>ethereum': { deposits: palmDeposits, executed: palmExecuted, unexecuted: palmFiltered.length, whitelisted: palmSkipped },
+      'ethereum>palm': { deposits: ethDeposits,  executed: ethExecuted,  unexecuted: ethFiltered.length,  whitelisted: ethSkipped },
+      allDeposits: palmDeposits + ethDeposits,
+    };
+
+    // ── Recent transfers (last N deposits, merged across both directions) ──
+    const recentCandidates = (depChain, dest, propChain, origin, direction) => db.prepare(`
+      SELECT d.deposit_nonce, d.resource_id, d.block_number AS deposit_block, d.tx_hash AS deposit_tx,
+             MAX(CASE WHEN p.status = '3' THEN 1 ELSE 0 END) AS executed,
+             MAX(CASE WHEN p.status = '4' THEN 1 ELSE 0 END) AS cancelled,
+             MAX(p.status) AS highest_status,
+             -- the execution (receiving-side) tx: the ProposalEvent that marked it Executed
+             MAX(CASE WHEN p.status = '3' THEN p.tx_hash END) AS exec_tx
+      FROM logs d
+      LEFT JOIN logs p
+        ON p.chain = ? AND p.event_name = 'ProposalEvent'
+       AND p.origin_chain_id = ? AND p.deposit_nonce = d.deposit_nonce
+      WHERE d.chain = ? AND d.event_name = 'Deposit' AND d.destination_chain_id = ?
+      GROUP BY d.deposit_nonce, d.resource_id, d.block_number, d.tx_hash
+      ORDER BY d.block_number DESC
+      LIMIT ?
+    `).all(propChain, origin, depChain, dest, RECENT_CANDIDATES).map(r => ({
+      direction,
+      chain:      depChain,          // the deposit tx lives on this chain
+      nonce:      r.deposit_nonce,
+      block:      r.deposit_block,
+      tx:         r.deposit_tx,
+      resourceID: r.resource_id,
+      ...withToken(r.resource_id),
+      status:     r.executed ? 'EXECUTED' : statusLabel(r),
+      execTx:     r.exec_tx || null,   // receiving-side tx (destination chain); null until executed
+    }));
+
+    const merged = [
+      ...recentCandidates('palm', '1', 'ethereum', '2', 'palm>ethereum'),
+      ...recentCandidates('ethereum', '2', 'palm', '1', 'ethereum>palm'),
+    ];
+    const times = await fetchBlockTimes(merged);           // best-effort; {} if no RPC
+    for (const it of merged) {
+      const ts = times[`${it.chain}:${it.block}`];
+      it.timestamp = ts != null ? new Date(ts * 1000).toISOString() : null;
+    }
+    // If every candidate has a real timestamp, order globally by time. Otherwise
+    // (no/partial RPC) block numbers aren't comparable across chains, so fall back
+    // to block-descending as a rough proxy rather than mixing null timestamps.
+    const allTimed = merged.length > 0 && merged.every(it => it.timestamp);
+    merged.sort((a, b) => allTimed
+      ? Date.parse(b.timestamp) - Date.parse(a.timestamp)
+      : b.block - a.block);
+    const recent = merged.slice(0, RECENT_LIMIT);
+
     const out = {
       generatedAt: new Date().toISOString(),
       totalUnexecuted: palmFiltered.length + ethFiltered.length,
+      totals,
+      recent,
+      recentOrder: allTimed ? 'timestamp' : 'block',
       directions: {
         'palm>ethereum': {
           label: 'Palm → Ethereum',
@@ -383,7 +519,7 @@ function cmdReconcile({ summary = false, json = false } = {}) {
     };
     const outPath = path.join(WEB_DATA_DIR, 'reconcile.json');
     fs.writeFileSync(outPath, JSON.stringify(out, null, 2) + '\n');
-    console.log(`Wrote ${path.relative(__dirname, outPath)} (${out.totalUnexecuted} unexecuted)`);
+    console.log(`Wrote ${path.relative(__dirname, outPath)} (${out.totalUnexecuted} unexecuted, ${recent.length} recent, order=${out.recentOrder})`);
     db.close();
     return;
   }
@@ -653,7 +789,7 @@ async function cmdImport(network) {
     await cmdFetch(arg1, overrideFromBlock);
 
   } else if (cmd === 'reconcile') {
-    cmdReconcile({ summary: flags.includes('--summary'), json: flags.includes('--json') });
+    await cmdReconcile({ summary: flags.includes('--summary'), json: flags.includes('--json') });
 
   } else if (cmd === 'export') {
     cmdExport();

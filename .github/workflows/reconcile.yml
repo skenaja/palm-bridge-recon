@@ -38,6 +38,8 @@ jobs:
           node bridge-db.js fetch ethereum
 
       - name: Export JSONL + reconcile JSON
+        env:
+          INFURA_KEY: ${{ secrets.INFURA_KEY }}   # reconcile fetches block timestamps for the recent-transfers list
         run: |
           node bridge-db.js export
           node bridge-db.js reconcile --json
