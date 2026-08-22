@@ -1,13 +1,23 @@
 {
-  "generatedAt": "2026-08-20T08:06:21.827Z",
-  "totalUnexecuted": 0,
+  "generatedAt": "2026-08-22T15:30:37.589Z",
+  "totalUnexecuted": 1,
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0,
-      "byStatus": {},
-      "items": []
+      "byStatus": {
+        "IN_PROGRESS(Passed)": 1
+      },
+      "items": [
+        {
+          "nonce": "13536",
+          "block": 30669590,
+          "tx": "0x139e65e54fbc9715856361b0f2b81ae632bc8dd9c5bf96468794c4854fc0e5f9",
+          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+          "status": "IN_PROGRESS(Passed)"
+        }
+      ]
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
