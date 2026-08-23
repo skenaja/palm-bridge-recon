@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-23T22:57:11.997Z",
-  "totalUnexecuted": 0,
+  "generatedAt": "2026-08-23T23:28:42.567Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
-      "deposits": 13536,
+      "deposits": 13537,
       "executed": 13536,
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -14,9 +14,22 @@
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25081
+    "allDeposits": 25082
   },
   "recent": [
+    {
+      "direction": "palm>ethereum",
+      "chain": "palm",
+      "nonce": "13537",
+      "block": 30687823,
+      "tx": "0x6cf28ad1409e2b8213522beb237c18d6d789b96dc53b086be40f1d859a66c694",
+      "resourceID": "0x0000000000000000000000f80e6c974b1f883982e1a077f5fe98269165009a02",
+      "symbol": "MADC",
+      "name": "MadC - Color Rhythms",
+      "status": "NO_PROPOSAL",
+      "execTx": null,
+      "timestamp": "2026-08-23T23:00:14.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -263,29 +276,28 @@
       "status": "EXECUTED",
       "execTx": "0xef882f268c9444a0762334b8f8a73ca9c1dd32f3c0dd1c9437d960e26a2febf9",
       "timestamp": "2026-06-15T01:13:50.000Z"
-    },
-    {
-      "direction": "ethereum>palm",
-      "chain": "ethereum",
-      "nonce": "11543",
-      "block": 25319280,
-      "tx": "0x5e69c00f48791bcb07c8990760cac763413b0a9fd3220ba1085f25f02b5b38f3",
-      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-      "symbol": "DAI",
-      "name": "Dai Stablecoin",
-      "status": "EXECUTED",
-      "execTx": "0xfb2a9a4249afa655de34f8a7b7e5578a518875bbda5a780575f4f176cd78ee21",
-      "timestamp": "2026-06-15T00:21:35.000Z"
     }
   ],
   "recentOrder": "timestamp",
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0,
-      "byStatus": {},
-      "items": []
+      "byStatus": {
+        "NO_PROPOSAL": 1
+      },
+      "items": [
+        {
+          "nonce": "13537",
+          "block": 30687823,
+          "tx": "0x6cf28ad1409e2b8213522beb237c18d6d789b96dc53b086be40f1d859a66c694",
+          "resourceID": "0x0000000000000000000000f80e6c974b1f883982e1a077f5fe98269165009a02",
+          "symbol": "MADC",
+          "name": "MadC - Color Rhythms",
+          "status": "NO_PROPOSAL"
+        }
+      ]
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
