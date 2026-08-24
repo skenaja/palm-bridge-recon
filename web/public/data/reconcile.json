@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-24T12:00:13.787Z",
-  "totalUnexecuted": 1,
+  "generatedAt": "2026-08-24T13:07:42.368Z",
+  "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
       "deposits": 13537,
-      "executed": 13536,
-      "unexecuted": 1,
+      "executed": 13537,
+      "unexecuted": 0,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,8 +26,8 @@
       "resourceID": "0x0000000000000000000000f80e6c974b1f883982e1a077f5fe98269165009a02",
       "symbol": "MADC",
       "name": "MadC - Color Rhythms",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0xb19df5ca167bd58865a3073ed1ecc862fa63039f5bae2dffefd4d9ee0affe6d1",
       "timestamp": "2026-08-23T23:00:14.000Z"
     },
     {
@@ -282,22 +282,10 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 1,
+      "unexecuted": 0,
       "whitelisted": 0,
-      "byStatus": {
-        "NO_PROPOSAL": 1
-      },
-      "items": [
-        {
-          "nonce": "13537",
-          "block": 30687823,
-          "tx": "0x6cf28ad1409e2b8213522beb237c18d6d789b96dc53b086be40f1d859a66c694",
-          "resourceID": "0x0000000000000000000000f80e6c974b1f883982e1a077f5fe98269165009a02",
-          "symbol": "MADC",
-          "name": "MadC - Color Rhythms",
-          "status": "NO_PROPOSAL"
-        }
-      ]
+      "byStatus": {},
+      "items": []
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
