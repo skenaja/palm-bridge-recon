@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-24T17:44:02.883Z",
-  "totalUnexecuted": 0,
+  "generatedAt": "2026-08-24T18:17:28.812Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
       "deposits": 13537,
@@ -9,14 +9,27 @@
       "whitelisted": 0
     },
     "ethereum>palm": {
-      "deposits": 11545,
+      "deposits": 11546,
       "executed": 11544,
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 1
     },
-    "allDeposits": 25082
+    "allDeposits": 25083
   },
   "recent": [
+    {
+      "direction": "ethereum>palm",
+      "chain": "ethereum",
+      "nonce": "11546",
+      "block": 25826775,
+      "tx": "0x98f4ce45157a5f1a9098d19a6b3294bb325c2dc0663452c5294f01a64f07ec14",
+      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+      "symbol": "DAI",
+      "name": "Dai Stablecoin",
+      "status": "NO_PROPOSAL",
+      "execTx": null,
+      "timestamp": "2026-08-24T18:16:23.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -263,19 +276,6 @@
       "status": "EXECUTED",
       "execTx": "0x86e8bd93fb91b10c9dfe2691dc84ef383348831792468caf6885cdc95ba18ba0",
       "timestamp": "2026-06-15T01:23:31.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13520",
-      "block": 29752503,
-      "tx": "0xd5a2f766511fd03cdfecf4904a6f24a860257086576d1aa0b82894699bfa92dd",
-      "resourceID": "0x00000000000000000000005140dbbeb64d478f246e81abb69f7017b6f437fe02",
-      "symbol": "GFG",
-      "name": "Greetings from Giza",
-      "status": "EXECUTED",
-      "execTx": "0xef882f268c9444a0762334b8f8a73ca9c1dd32f3c0dd1c9437d960e26a2febf9",
-      "timestamp": "2026-06-15T01:13:50.000Z"
     }
   ],
   "recentOrder": "timestamp",
@@ -289,10 +289,22 @@
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 1,
-      "byStatus": {},
-      "items": []
+      "byStatus": {
+        "NO_PROPOSAL": 1
+      },
+      "items": [
+        {
+          "nonce": "11546",
+          "block": 25826775,
+          "tx": "0x98f4ce45157a5f1a9098d19a6b3294bb325c2dc0663452c5294f01a64f07ec14",
+          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+          "symbol": "DAI",
+          "name": "Dai Stablecoin",
+          "status": "NO_PROPOSAL"
+        }
+      ]
     }
   }
 }
