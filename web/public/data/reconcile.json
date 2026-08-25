@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-25T18:42:52.388Z",
-  "totalUnexecuted": 1,
+  "generatedAt": "2026-08-25T19:19:18.669Z",
+  "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
       "deposits": 13540,
-      "executed": 13539,
-      "unexecuted": 1,
+      "executed": 13540,
+      "unexecuted": 0,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,8 +26,8 @@
       "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
       "symbol": "HEDE",
       "name": "HENI Editions Deed - The Empresses",
-      "status": "IN_PROGRESS(Passed)",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0xcd1d612bfc032de954b26513ca6847390d08b61501946ce52216c96470bcafb3",
       "timestamp": "2026-08-24T23:49:08.000Z"
     },
     {
@@ -282,22 +282,10 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 1,
+      "unexecuted": 0,
       "whitelisted": 0,
-      "byStatus": {
-        "IN_PROGRESS(Passed)": 1
-      },
-      "items": [
-        {
-          "nonce": "13540",
-          "block": 30701047,
-          "tx": "0x0e332fa7a593ececf888ccd5b3ed8997548d4cd3313000319fe28d14beb13ae8",
-          "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
-          "symbol": "HEDE",
-          "name": "HENI Editions Deed - The Empresses",
-          "status": "IN_PROGRESS(Passed)"
-        }
-      ]
+      "byStatus": {},
+      "items": []
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
