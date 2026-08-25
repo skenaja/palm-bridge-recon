@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-25T17:51:43.862Z",
-  "totalUnexecuted": 3,
+  "generatedAt": "2026-08-25T18:42:52.388Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
       "deposits": 13540,
-      "executed": 13537,
-      "unexecuted": 3,
+      "executed": 13539,
+      "unexecuted": 1,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,7 +26,7 @@
       "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
       "symbol": "HEDE",
       "name": "HENI Editions Deed - The Empresses",
-      "status": "NO_PROPOSAL",
+      "status": "IN_PROGRESS(Passed)",
       "execTx": null,
       "timestamp": "2026-08-24T23:49:08.000Z"
     },
@@ -52,8 +52,8 @@
       "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
       "symbol": "HEDE",
       "name": "HENI Editions Deed - The Empresses",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0xb7b43bd5fffbe65aab06a5e1d65b8dc42125b3caef1e91bbaf3f8c9c41685dfd",
       "timestamp": "2026-08-24T18:26:33.000Z"
     },
     {
@@ -65,8 +65,8 @@
       "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
       "symbol": "HEDE",
       "name": "HENI Editions Deed - The Empresses",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x1d0be83b3e21753633f05c0e394600af4bf824f5bbaf10760971c743b58e092c",
       "timestamp": "2026-08-24T18:24:06.000Z"
     },
     {
@@ -282,30 +282,12 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 3,
+      "unexecuted": 1,
       "whitelisted": 0,
       "byStatus": {
-        "NO_PROPOSAL": 3
+        "IN_PROGRESS(Passed)": 1
       },
       "items": [
-        {
-          "nonce": "13538",
-          "block": 30698162,
-          "tx": "0x3708444929f24138aa8f160b8d529d3175415c32560965103fcc54f7bcb48be9",
-          "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
-          "symbol": "HEDE",
-          "name": "HENI Editions Deed - The Empresses",
-          "status": "NO_PROPOSAL"
-        },
-        {
-          "nonce": "13539",
-          "block": 30698183,
-          "tx": "0xae5ae217826e3f2d47039687d66375aca983116e801e52591cb347e8821c4219",
-          "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
-          "symbol": "HEDE",
-          "name": "HENI Editions Deed - The Empresses",
-          "status": "NO_PROPOSAL"
-        },
         {
           "nonce": "13540",
           "block": 30701047,
@@ -313,7 +295,7 @@
           "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
           "symbol": "HEDE",
           "name": "HENI Editions Deed - The Empresses",
-          "status": "NO_PROPOSAL"
+          "status": "IN_PROGRESS(Passed)"
         }
       ]
     },
