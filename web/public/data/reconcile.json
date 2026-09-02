@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T17:21:03.170Z",
+  "generatedAt": "2026-09-02T20:01:53.453Z",
   "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
@@ -9,14 +9,40 @@
       "whitelisted": 0
     },
     "ethereum>palm": {
-      "deposits": 11547,
-      "executed": 11546,
+      "deposits": 11549,
+      "executed": 11548,
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25090
+    "allDeposits": 25092
   },
   "recent": [
+    {
+      "direction": "ethereum>palm",
+      "chain": "ethereum",
+      "nonce": "11549",
+      "block": 25891805,
+      "tx": "0x092a986da007a6845d329a15fe682ca881f97426974a0990a492598f27d06b59",
+      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+      "symbol": "DAI",
+      "name": "Dai Stablecoin",
+      "status": "EXECUTED",
+      "execTx": "0x12cca1f1ec51b31101d4f9ce15208dba9b5d9fc656f87a3b49f6d427d5ab1064",
+      "timestamp": "2026-09-02T19:48:59.000Z"
+    },
+    {
+      "direction": "ethereum>palm",
+      "chain": "ethereum",
+      "nonce": "11548",
+      "block": 25891745,
+      "tx": "0x1f74d90e6d0935ec30b85666d198f7a9ae435acd38750dad70191debe51c8bbd",
+      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+      "symbol": "DAI",
+      "name": "Dai Stablecoin",
+      "status": "EXECUTED",
+      "execTx": "0x4a9a5677904e4961e1825983ea3086075c3467fd1362251947e00829b0b4870c",
+      "timestamp": "2026-09-02T19:36:59.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -250,32 +276,6 @@
       "status": "EXECUTED",
       "execTx": "0x734744382218ae57ccd108a3f4d117f47c486b9e365acec2b8dcfb512219e038",
       "timestamp": "2026-06-30T17:12:45.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13528",
-      "block": 30017981,
-      "tx": "0x82a1b61c12e380772791896927839fbb0f8c4a955e96f2d4b521c2f1b0c74f37",
-      "resourceID": "0x0000000000000000000000f8b37af2b5fe2ce1cc303a8472dedccca0953bb202",
-      "symbol": "GE",
-      "name": "Great Expectations",
-      "status": "EXECUTED",
-      "execTx": "0x9b4495d7a14d4c333826b67d1933d017774c78be14a66c949a4e7e2b13901499",
-      "timestamp": "2026-06-30T17:00:17.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13527",
-      "block": 30017935,
-      "tx": "0x53dff498973f10c77d3eb480e305a8fc8688af5140c90ffc039aa884ba63ade6",
-      "resourceID": "0x0000000000000000000000f8b37af2b5fe2ce1cc303a8472dedccca0953bb202",
-      "symbol": "GE",
-      "name": "Great Expectations",
-      "status": "EXECUTED",
-      "execTx": "0x817cf86a265d86c0ff907128be5fd6aaaee4d7447d1c8dc4dc6cbad184d5038b",
-      "timestamp": "2026-06-30T16:56:24.000Z"
     }
   ],
   "recentOrder": "timestamp",
