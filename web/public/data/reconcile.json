@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-04T13:43:37.389Z",
-  "totalUnexecuted": 0,
+  "generatedAt": "2026-09-04T17:10:14.937Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
-      "deposits": 13544,
+      "deposits": 13545,
       "executed": 13544,
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -14,9 +14,22 @@
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25093
+    "allDeposits": 25094
   },
   "recent": [
+    {
+      "direction": "palm>ethereum",
+      "chain": "palm",
+      "nonce": "13545",
+      "block": 30871605,
+      "tx": "0x8dace1a4391e8f1b9ebb5368ecbd7923c1a2603c0f5d3da84e7f4d39fb9b05c7",
+      "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
+      "symbol": "TENDER",
+      "name": "TheCurrency",
+      "status": "NO_PROPOSAL",
+      "execTx": null,
+      "timestamp": "2026-09-04T16:37:27.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -263,29 +276,28 @@
       "status": "EXECUTED",
       "execTx": "0x0f39d832281d33223dd91d75deb89267095774e3181624afeeb1c3bf5f85b59b",
       "timestamp": "2026-06-30T19:01:42.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13530",
-      "block": 30018232,
-      "tx": "0x7d1908ba28ff7e68bdeca1071e8575fe5e08cf73557abd89218d6a25ba0b3ee2",
-      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-      "symbol": "DAI",
-      "name": "Dai Stablecoin",
-      "status": "EXECUTED",
-      "execTx": "0xd3a3e26de93ba46b5dc3bb7605471a259025e8457b8c996aae51d2a320d1b7d8",
-      "timestamp": "2026-06-30T17:21:25.000Z"
     }
   ],
   "recentOrder": "timestamp",
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0,
-      "byStatus": {},
-      "items": []
+      "byStatus": {
+        "NO_PROPOSAL": 1
+      },
+      "items": [
+        {
+          "nonce": "13545",
+          "block": 30871605,
+          "tx": "0x8dace1a4391e8f1b9ebb5368ecbd7923c1a2603c0f5d3da84e7f4d39fb9b05c7",
+          "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
+          "symbol": "TENDER",
+          "name": "TheCurrency",
+          "status": "NO_PROPOSAL"
+        }
+      ]
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
