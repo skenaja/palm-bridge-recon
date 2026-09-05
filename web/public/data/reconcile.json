@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T05:56:25.702Z",
+  "generatedAt": "2026-09-05T10:22:43.375Z",
   "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
@@ -26,7 +26,7 @@
       "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
       "symbol": "TENDER",
       "name": "TheCurrency",
-      "status": "NO_PROPOSAL",
+      "status": "IN_PROGRESS(Passed)",
       "execTx": null,
       "timestamp": "2026-09-04T19:09:27.000Z"
     },
@@ -285,7 +285,7 @@
       "unexecuted": 1,
       "whitelisted": 0,
       "byStatus": {
-        "NO_PROPOSAL": 1
+        "IN_PROGRESS(Passed)": 1
       },
       "items": [
         {
@@ -295,7 +295,7 @@
           "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
           "symbol": "TENDER",
           "name": "TheCurrency",
-          "status": "NO_PROPOSAL"
+          "status": "IN_PROGRESS(Passed)"
         }
       ]
     },
