@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-05T13:30:13.001Z",
-  "totalUnexecuted": 1,
+  "generatedAt": "2026-09-05T16:13:14.101Z",
+  "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
       "deposits": 13546,
-      "executed": 13545,
-      "unexecuted": 1,
+      "executed": 13546,
+      "unexecuted": 0,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,8 +26,8 @@
       "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
       "symbol": "TENDER",
       "name": "TheCurrency",
-      "status": "IN_PROGRESS(Passed)",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x8980f44e3df5ec953ef95a463e16ff4093468cc57c54d6df2e086161f1e3ed24",
       "timestamp": "2026-09-04T19:09:27.000Z"
     },
     {
@@ -282,22 +282,10 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 1,
+      "unexecuted": 0,
       "whitelisted": 0,
-      "byStatus": {
-        "IN_PROGRESS(Passed)": 1
-      },
-      "items": [
-        {
-          "nonce": "13546",
-          "block": 30873402,
-          "tx": "0xe3d939f942cfffd81e818821c9418400e9c8624663f12b2e261a9307ebf55979",
-          "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
-          "symbol": "TENDER",
-          "name": "TheCurrency",
-          "status": "IN_PROGRESS(Passed)"
-        }
-      ]
+      "byStatus": {},
+      "items": []
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
