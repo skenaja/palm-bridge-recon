@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-09T06:40:21.775Z",
-  "totalUnexecuted": 1,
+  "generatedAt": "2026-09-09T11:58:45.294Z",
+  "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
       "deposits": 13548,
-      "executed": 13547,
-      "unexecuted": 1,
+      "executed": 13548,
+      "unexecuted": 0,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,8 +26,8 @@
       "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
       "symbol": "DAI",
       "name": "Dai Stablecoin",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x093e9597784b0c88cf25fe51dcd37402380dbfd206b2c1f045ad83321d3017d7",
       "timestamp": "2026-09-08T22:28:36.000Z"
     },
     {
@@ -282,22 +282,10 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 1,
+      "unexecuted": 0,
       "whitelisted": 0,
-      "byStatus": {
-        "NO_PROPOSAL": 1
-      },
-      "items": [
-        {
-          "nonce": "13548",
-          "block": 30943835,
-          "tx": "0xfa1ea29ebf3315939d6261c5c079e5e2b2b7ecededb23fafb11c8b725e958d4b",
-          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-          "symbol": "DAI",
-          "name": "Dai Stablecoin",
-          "status": "NO_PROPOSAL"
-        }
-      ]
+      "byStatus": {},
+      "items": []
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
