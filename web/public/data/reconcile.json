@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T15:42:53.043Z",
+  "generatedAt": "2026-09-15T19:17:49.474Z",
   "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
@@ -9,14 +9,27 @@
       "whitelisted": 0
     },
     "ethereum>palm": {
-      "deposits": 11550,
-      "executed": 11549,
+      "deposits": 11551,
+      "executed": 11550,
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25099
+    "allDeposits": 25100
   },
   "recent": [
+    {
+      "direction": "ethereum>palm",
+      "chain": "ethereum",
+      "nonce": "11551",
+      "block": 25984204,
+      "tx": "0xfd0010d86d29f067c96e7385a91f0ee093aac09ab2e25d741f128b00fce15e3e",
+      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+      "symbol": "DAI",
+      "name": "Dai Stablecoin",
+      "status": "EXECUTED",
+      "execTx": "0x4c0380b000c6e59242b300903d8554f64d1ab39ff8f5b6d3ff78328793335909",
+      "timestamp": "2026-09-15T16:57:35.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -263,19 +276,6 @@
       "status": "EXECUTED",
       "execTx": "0x592ee8bec312899c4842011935dc33283dc41565de20ed993487f6290f6fdf51",
       "timestamp": "2026-08-22T12:46:43.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13535",
-      "block": 30580689,
-      "tx": "0x4d41b9ec2edf039c0eed147f1a1aa1b7b0cd82d428f5bd4101f85bff6ea756e2",
-      "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
-      "symbol": "TENDER",
-      "name": "TheCurrency",
-      "status": "EXECUTED",
-      "execTx": "0xd4d754340c478b1593dff7430c63f27cacb442e0094eace45689eb064ad17559",
-      "timestamp": "2026-08-11T18:41:20.000Z"
     }
   ],
   "recentOrder": "timestamp",
