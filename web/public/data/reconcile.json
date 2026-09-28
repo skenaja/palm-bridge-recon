@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-28T13:41:43.548Z",
-  "totalUnexecuted": 0,
+  "generatedAt": "2026-09-28T20:16:27.992Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
-      "deposits": 13552,
+      "deposits": 13553,
       "executed": 13552,
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -14,9 +14,22 @@
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25103
+    "allDeposits": 25104
   },
   "recent": [
+    {
+      "direction": "palm>ethereum",
+      "chain": "palm",
+      "nonce": "13553",
+      "block": 31275445,
+      "tx": "0xbd4577d3737f979ae5d65267740e81fbaa349affc75abe2249fa40e5c039e456",
+      "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
+      "symbol": "TENDER",
+      "name": "TheCurrency",
+      "status": "NO_PROPOSAL",
+      "execTx": null,
+      "timestamp": "2026-09-28T14:20:31.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -263,29 +276,28 @@
       "status": "EXECUTED",
       "execTx": "0xb7b43bd5fffbe65aab06a5e1d65b8dc42125b3caef1e91bbaf3f8c9c41685dfd",
       "timestamp": "2026-08-24T18:26:33.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13538",
-      "block": 30698162,
-      "tx": "0x3708444929f24138aa8f160b8d529d3175415c32560965103fcc54f7bcb48be9",
-      "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
-      "symbol": "HEDE",
-      "name": "HENI Editions Deed - The Empresses",
-      "status": "EXECUTED",
-      "execTx": "0x1d0be83b3e21753633f05c0e394600af4bf824f5bbaf10760971c743b58e092c",
-      "timestamp": "2026-08-24T18:24:06.000Z"
     }
   ],
   "recentOrder": "timestamp",
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0,
-      "byStatus": {},
-      "items": []
+      "byStatus": {
+        "NO_PROPOSAL": 1
+      },
+      "items": [
+        {
+          "nonce": "13553",
+          "block": 31275445,
+          "tx": "0xbd4577d3737f979ae5d65267740e81fbaa349affc75abe2249fa40e5c039e456",
+          "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
+          "symbol": "TENDER",
+          "name": "TheCurrency",
+          "status": "NO_PROPOSAL"
+        }
+      ]
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
