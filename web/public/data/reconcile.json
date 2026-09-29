@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-29T18:19:56.773Z",
-  "totalUnexecuted": 2,
+  "generatedAt": "2026-09-29T22:26:48.734Z",
+  "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
       "deposits": 13554,
-      "executed": 13552,
-      "unexecuted": 2,
+      "executed": 13554,
+      "unexecuted": 0,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,8 +26,8 @@
       "resourceID": "0x0000000000000000000000f8b37af2b5fe2ce1cc303a8472dedccca0953bb202",
       "symbol": "GE",
       "name": "Great Expectations",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x75649d3255ff2e7e11f162c134468e0063575b492f7e0de4e60e61f7e652e9b4",
       "timestamp": "2026-09-29T09:02:23.000Z"
     },
     {
@@ -52,8 +52,8 @@
       "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
       "symbol": "TENDER",
       "name": "TheCurrency",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0xb5afc7c1de6fe38193a83817e42f442a5b875a72ed2ac183552f4ffa98cae608",
       "timestamp": "2026-09-28T14:20:31.000Z"
     },
     {
@@ -282,31 +282,10 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 2,
+      "unexecuted": 0,
       "whitelisted": 0,
-      "byStatus": {
-        "NO_PROPOSAL": 2
-      },
-      "items": [
-        {
-          "nonce": "13553",
-          "block": 31275445,
-          "tx": "0xbd4577d3737f979ae5d65267740e81fbaa349affc75abe2249fa40e5c039e456",
-          "resourceID": "0x0000000000000000000000aadc2d4261199ce24a4b0a57370c4fcf43bb60aa02",
-          "symbol": "TENDER",
-          "name": "TheCurrency",
-          "status": "NO_PROPOSAL"
-        },
-        {
-          "nonce": "13554",
-          "block": 31288707,
-          "tx": "0x6c1b2cf203b4a2c3ee61cf9acd171de575c31e364a6a8c256325da7c73652404",
-          "resourceID": "0x0000000000000000000000f8b37af2b5fe2ce1cc303a8472dedccca0953bb202",
-          "symbol": "GE",
-          "name": "Great Expectations",
-          "status": "NO_PROPOSAL"
-        }
-      ]
+      "byStatus": {},
+      "items": []
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
