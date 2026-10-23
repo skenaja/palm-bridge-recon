@@ -1,22 +1,48 @@
 {
-  "generatedAt": "2026-10-23T06:36:05.831Z",
-  "totalUnexecuted": 0,
+  "generatedAt": "2026-10-23T12:06:29.226Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
-      "deposits": 13554,
+      "deposits": 13555,
       "executed": 13554,
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0
     },
     "ethereum>palm": {
-      "deposits": 11552,
-      "executed": 11551,
+      "deposits": 11553,
+      "executed": 11552,
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25106
+    "allDeposits": 25108
   },
   "recent": [
+    {
+      "direction": "palm>ethereum",
+      "chain": "palm",
+      "nonce": "13555",
+      "block": 31656244,
+      "tx": "0x2cab1323ba7c9a9d92cd228e6a182325841c3ac26114314a0e0e830c5c2ba923",
+      "resourceID": "0x0000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc201",
+      "symbol": "WETH",
+      "name": "Wrapped Ether",
+      "status": "NO_PROPOSAL",
+      "execTx": null,
+      "timestamp": "2026-10-23T11:17:19.000Z"
+    },
+    {
+      "direction": "ethereum>palm",
+      "chain": "ethereum",
+      "nonce": "11553",
+      "block": 26254937,
+      "tx": "0x9237ec1753abcc10fb0cb815f477c7e7eac463d41e8789a95875d8f169e3e865",
+      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
+      "symbol": "DAI",
+      "name": "Dai Stablecoin",
+      "status": "EXECUTED",
+      "execTx": "0x538782ec1e55124b04d06777b7da9abfbbaeb908f16bae8d0637a24e922e8f27",
+      "timestamp": "2026-10-23T11:10:23.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -250,42 +276,28 @@
       "status": "EXECUTED",
       "execTx": "0xfe245b33c4fb37c35c35e6fb4196da5c259058c69b3c2a229022039262fb8eb8",
       "timestamp": "2026-08-26T12:52:39.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13541",
-      "block": 30720326,
-      "tx": "0xa5d3a75aec3b5480278c31d3acf2cd05a0eae262569ce71e320565f31bc7a6ca",
-      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-      "symbol": "DAI",
-      "name": "Dai Stablecoin",
-      "status": "EXECUTED",
-      "execTx": "0xc0e86161f60919ae513992ab790b92b15c906664bc899ffd265bc00a0eaf7c21",
-      "timestamp": "2026-08-26T12:00:28.000Z"
-    },
-    {
-      "direction": "palm>ethereum",
-      "chain": "palm",
-      "nonce": "13540",
-      "block": 30701047,
-      "tx": "0x0e332fa7a593ececf888ccd5b3ed8997548d4cd3313000319fe28d14beb13ae8",
-      "resourceID": "0x00000000000000000000003bf99d504e67a977f88b417ab68d34915f3a120902",
-      "symbol": "HEDE",
-      "name": "HENI Editions Deed - The Empresses",
-      "status": "EXECUTED",
-      "execTx": "0xcd1d612bfc032de954b26513ca6847390d08b61501946ce52216c96470bcafb3",
-      "timestamp": "2026-08-24T23:49:08.000Z"
     }
   ],
   "recentOrder": "timestamp",
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 0,
+      "unexecuted": 1,
       "whitelisted": 0,
-      "byStatus": {},
-      "items": []
+      "byStatus": {
+        "NO_PROPOSAL": 1
+      },
+      "items": [
+        {
+          "nonce": "13555",
+          "block": 31656244,
+          "tx": "0x2cab1323ba7c9a9d92cd228e6a182325841c3ac26114314a0e0e830c5c2ba923",
+          "resourceID": "0x0000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc201",
+          "symbol": "WETH",
+          "name": "Wrapped Ether",
+          "status": "NO_PROPOSAL"
+        }
+      ]
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
