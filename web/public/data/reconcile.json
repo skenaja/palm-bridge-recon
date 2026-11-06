@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-06T16:14:52.982Z",
-  "totalUnexecuted": 1,
+  "generatedAt": "2026-11-06T21:36:29.752Z",
+  "totalUnexecuted": 0,
   "totals": {
     "palm>ethereum": {
       "deposits": 13572,
-      "executed": 13571,
-      "unexecuted": 1,
+      "executed": 13572,
+      "unexecuted": 0,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -26,8 +26,8 @@
       "resourceID": "0x0000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc201",
       "symbol": "WETH",
       "name": "Wrapped Ether",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x34401644b5b1ba4a596ef43fc2e94f83078154b3de90c0730ee63156546fdf6f",
       "timestamp": "2026-11-06T14:59:28.000Z"
     },
     {
@@ -282,22 +282,10 @@
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 1,
+      "unexecuted": 0,
       "whitelisted": 0,
-      "byStatus": {
-        "NO_PROPOSAL": 1
-      },
-      "items": [
-        {
-          "nonce": "13572",
-          "block": 31885923,
-          "tx": "0x9b302d72742a330122628024ca8fcd9306d6a8b492594dd5dd43678f082450ea",
-          "resourceID": "0x0000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc201",
-          "symbol": "WETH",
-          "name": "Wrapped Ether",
-          "status": "NO_PROPOSAL"
-        }
-      ]
+      "byStatus": {},
+      "items": []
     },
     "ethereum>palm": {
       "label": "Ethereum → Palm",
