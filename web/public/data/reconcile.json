@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-06T08:32:59.570Z",
-  "totalUnexecuted": 5,
+  "generatedAt": "2026-11-06T16:14:52.982Z",
+  "totalUnexecuted": 1,
   "totals": {
     "palm>ethereum": {
-      "deposits": 13571,
-      "executed": 13566,
-      "unexecuted": 5,
+      "deposits": 13572,
+      "executed": 13571,
+      "unexecuted": 1,
       "whitelisted": 0
     },
     "ethereum>palm": {
@@ -14,9 +14,22 @@
       "unexecuted": 0,
       "whitelisted": 1
     },
-    "allDeposits": 25124
+    "allDeposits": 25125
   },
   "recent": [
+    {
+      "direction": "palm>ethereum",
+      "chain": "palm",
+      "nonce": "13572",
+      "block": 31885923,
+      "tx": "0x9b302d72742a330122628024ca8fcd9306d6a8b492594dd5dd43678f082450ea",
+      "resourceID": "0x0000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc201",
+      "symbol": "WETH",
+      "name": "Wrapped Ether",
+      "status": "NO_PROPOSAL",
+      "execTx": null,
+      "timestamp": "2026-11-06T14:59:28.000Z"
+    },
     {
       "direction": "palm>ethereum",
       "chain": "palm",
@@ -26,8 +39,8 @@
       "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
       "symbol": "DAI",
       "name": "Dai Stablecoin",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x32564dcb5b360431f0d265d998e85f26d02125ac56aaa07b89d13cc41ac809aa",
       "timestamp": "2026-11-05T20:50:54.000Z"
     },
     {
@@ -39,8 +52,8 @@
       "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
       "symbol": "DAI",
       "name": "Dai Stablecoin",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x5a75dcfc8e1c532008fa47db809e8d14e2e08dbf4b72a2bc627a234bb28c56e3",
       "timestamp": "2026-11-05T20:48:12.000Z"
     },
     {
@@ -52,8 +65,8 @@
       "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
       "symbol": "DAI",
       "name": "Dai Stablecoin",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x1ba957f0b970b1a93ccdabb8b6c49165120f411e0e4f7f8574115e40d44fdc45",
       "timestamp": "2026-11-05T20:45:30.000Z"
     },
     {
@@ -65,8 +78,8 @@
       "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
       "symbol": "DAI",
       "name": "Dai Stablecoin",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0xa43054da1a02c18780308f59158d4c9330ec3ce6b334eb8a8dc8f4872a4de0cc",
       "timestamp": "2026-11-05T20:42:48.000Z"
     },
     {
@@ -78,8 +91,8 @@
       "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
       "symbol": "DAI",
       "name": "Dai Stablecoin",
-      "status": "NO_PROPOSAL",
-      "execTx": null,
+      "status": "EXECUTED",
+      "execTx": "0x728454a1d48d025b979f0a24b5a982bbafed4a722f8acca68d48f0e83a25e756",
       "timestamp": "2026-11-05T20:39:51.000Z"
     },
     {
@@ -263,74 +276,25 @@
       "status": "EXECUTED",
       "execTx": "0x75649d3255ff2e7e11f162c134468e0063575b492f7e0de4e60e61f7e652e9b4",
       "timestamp": "2026-09-29T09:02:23.000Z"
-    },
-    {
-      "direction": "ethereum>palm",
-      "chain": "ethereum",
-      "nonce": "11552",
-      "block": 26081858,
-      "tx": "0x7a4ee44166c9f023d7872fc069eb4c675e74624e6035a8ead9411157bf88ca56",
-      "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-      "symbol": "DAI",
-      "name": "Dai Stablecoin",
-      "status": "EXECUTED",
-      "execTx": "0x89d32b01edac873166dfcb1b41fd5808296d986d09fcd028615487298bfb1546",
-      "timestamp": "2026-09-29T08:14:35.000Z"
     }
   ],
   "recentOrder": "timestamp",
   "directions": {
     "palm>ethereum": {
       "label": "Palm → Ethereum",
-      "unexecuted": 5,
+      "unexecuted": 1,
       "whitelisted": 0,
       "byStatus": {
-        "NO_PROPOSAL": 5
+        "NO_PROPOSAL": 1
       },
       "items": [
         {
-          "nonce": "13567",
-          "block": 31872921,
-          "tx": "0xcebf8d5d45b8bf8ade85e6110a6e1bd2eb603673fe5e1284f855dbba74ac711b",
-          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-          "symbol": "DAI",
-          "name": "Dai Stablecoin",
-          "status": "NO_PROPOSAL"
-        },
-        {
-          "nonce": "13568",
-          "block": 31872956,
-          "tx": "0xf90218b807ecc8d169c614a9cd306db75ed9db95d37d8769674f5535bfebe95a",
-          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-          "symbol": "DAI",
-          "name": "Dai Stablecoin",
-          "status": "NO_PROPOSAL"
-        },
-        {
-          "nonce": "13569",
-          "block": 31872988,
-          "tx": "0xb2b962c5baa491625734736a7eee69ea9120b055e62bd953808093bde33a9ca1",
-          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-          "symbol": "DAI",
-          "name": "Dai Stablecoin",
-          "status": "NO_PROPOSAL"
-        },
-        {
-          "nonce": "13570",
-          "block": 31873020,
-          "tx": "0x482d174bf39467f1ea85d33c3125b9fd1eebde8a75a8012b0f6005bde47f7d6e",
-          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-          "symbol": "DAI",
-          "name": "Dai Stablecoin",
-          "status": "NO_PROPOSAL"
-        },
-        {
-          "nonce": "13571",
-          "block": 31873052,
-          "tx": "0xa13be30766de5daeb06c703e0f82910e428bc739caa42444fc7ce23640f94487",
-          "resourceID": "0x00000000000000000000006b175474e89094c44da98b954eedeac495271d0f01",
-          "symbol": "DAI",
-          "name": "Dai Stablecoin",
+          "nonce": "13572",
+          "block": 31885923,
+          "tx": "0x9b302d72742a330122628024ca8fcd9306d6a8b492594dd5dd43678f082450ea",
+          "resourceID": "0x0000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc201",
+          "symbol": "WETH",
+          "name": "Wrapped Ether",
           "status": "NO_PROPOSAL"
         }
       ]
